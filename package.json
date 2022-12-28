@@ -1,0 +1,50 @@
+{
+  "name": "vite-plugin-react-code-navigation",
+  "version": "1.2.1",
+  "description": "代码导航 vite 插件",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Charles-ShiZ/vite-plugin-react-code-navigation"
+  },
+  "homepage": "https://github.com/Charles-ShiZ/vite-plugin-react-code-navigation",
+  "scripts": {
+    "esbuild:cjs": "esbuild ./src/index.ts --bundle --platform=node --outfile=dist/index.cjs --format=cjs",
+    "esbuild:esm": "esbuild ./src/index.ts --bundle --platform=node --outfile=dist/index.mjs --format=esm",
+    "build": "npm run esbuild:cjs && npm run esbuild:esm",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vite",
+    "plugin",
+    "react-vite-plugin",
+    "jump to code",
+    "jump to vscode",
+    "jump to source code",
+    "code-navigation"
+  ],
+  "author": "shizhanhong",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/babel__generator": "^7.6.4",
+    "@types/babel__traverse": "^7.18.3",
+    "@types/node": "^18.7.18",
+    "esbuild": "^0.15.8"
+  },
+  "dependencies": {
+    "@babel/generator": "^7.20.7",
+    "@babel/parser": "^7.20.7",
+    "@babel/traverse": "^7.20.10",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.75.0"
+  }
+}
